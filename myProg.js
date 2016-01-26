@@ -14,19 +14,17 @@ fs.readdir("./", function(err, files)
 		
 		if(files[i] != "myProg.js") 
 		{
-			console.log(files[i]);
-			fs.readFile(files[i], function(error, data) 
+			//console.log(files[i]);
+			fs.readFile(files[i], {encoding: "utf8", flag: "r"}, function(error, data) 
 			{
 				// If we have an error object then throw it. JS has an inbuild Error object
 				// so look it up to learn more about it.
-				console.log("Contents of file: " + files[i] + " " + data);	
-				if (error)
-				{
-					// The throw statement in JS throws an exception which other code can catch
-					// and try yo handle. It is a form or error handling.
-					throw error;
-				}
-    
+					
+				//if (error)
+				//{
+				//	throw error;
+				//}
+    			console.log("Contents of file: " + files[i] + " " + data);
 			
 			});
 		}
